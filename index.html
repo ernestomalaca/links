@@ -297,7 +297,7 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
       if (!j || !/^[\w-]{6,20}$/.test(j.id || '')) return;
       caja.className = 'video';
       caja.href = 'https://www.youtube.com/watch?v=' + j.id;
-      caja.innerHTML = '<span class="mini"><img src="https://i.ytimg.com/vi/' + j.id + '/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')"><span class="play">' + svg(ICONOS.play, 26) + '</span></span>' +
+      caja.innerHTML = '<span class="mini"><img src="https://i.ytimg.com/vi/' + j.id + '/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/maxresdefault/,/hqdefault/.source)"><span class="play">' + svg(ICONOS.play, 26) + '</span></span>' +
         '<span class="txt"><span class="etiqueta">' + esc(v.etiqueta) + '</span><h2>' + esc(j.titulo) + '</h2></span>';
     }).catch(function () {});
   }
