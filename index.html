@@ -47,6 +47,13 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
 .fuego p{margin:0;font-size:14px;line-height:1.5;font-weight:500}
 .precios{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .precio{position:relative;background:#EFEEE9;color:var(--tinta);border-radius:18px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:2px;overflow:hidden}
+.precio{transition:transform .18s,box-shadow .18s,background .18s}
+.precio:hover,.precio:focus-visible{transform:translateY(-4px);background:#FFFFFF;box-shadow:inset 0 0 0 2px var(--acento),0 10px 22px rgba(26,28,24,.16)}
+.precio .pide{display:flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:700;color:var(--tinta)}
+.precio .pide svg{transition:transform .18s}
+.precio:hover .pide{color:#B84300}
+.precio:hover .pide svg{transform:translateX(5px)}
+.precio:hover .ahora{color:#B84300}
 .precio .nom{font-size:13px;font-weight:700}
 .precio .det{font-size:11px;color:var(--gris);line-height:1.3;min-height:28px}
 .precio .antes{position:relative;align-self:flex-start;font-size:14px;font-weight:600;color:var(--gris);margin-top:6px}
@@ -178,11 +185,12 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
       h += '<div class="precios">';
       f.precios.forEach(function (p) {
         var pct = Math.round((1 - p.ahora / p.antes) * 100);
-        h += '<div class="precio"><span class="menos">-' + pct + '%</span>';
+        h += '<a class="precio" href="' + esc(f.url) + '" rel="noopener"><span class="menos">-' + pct + '%</span>';
         h += '<span class="nom">' + esc(p.nombre) + '</span><span class="det">' + esc(p.detalle) + '</span>';
         h += '<span class="antes"><span class="sr">Antes </span>$' + esc(p.antes) + '</span>';
         h += '<span class="ahora" data-de="' + esc(p.antes) + '" data-a="' + esc(p.ahora) + '" aria-label="Ahora ' + esc(p.ahora) + ' ' + esc(f.moneda || '') + '">$' + esc(p.ahora) + '<small>' + esc(f.moneda || '') + '</small></span>';
-        h += '</div>';
+        h += '<span class="pide">' + esc(f.botonPrecio || 'Pedir cupón') + svg(ICONOS.flecha, 14) + '</span>';
+        h += '</a>';
       });
       h += '</div>';
     }
