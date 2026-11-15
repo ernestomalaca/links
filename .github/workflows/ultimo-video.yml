@@ -1,0 +1,35 @@
+name: Último video de YouTube
+
+on:
+  schedule:
+    - cron: "23 * * * *" # cada hora
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ultimo-video
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Buscar el último video
+        run: python scripts/ultimo_video.py
+      - name: Guardar si cambió
+        run: |
+          if [ -n "$(git status --porcelain video.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add video.json
+            git commit -m "Actualiza el último video"
+            git push
+          else
+            echo "Sin cambios."
+          fi

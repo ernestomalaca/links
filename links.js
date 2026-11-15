@@ -2,16 +2,17 @@
   LINKS DE MALACA MUSIC LAB
   Este es el único archivo que hay que editar para cambiar la página.
 
-  - Las fechas van así: "2026-11-25T23:59:00-06:00" (año-mes-día T hora, hora de CDMX).
+  - Las fechas van así: "2026-12-04T23:59:00-06:00" (año-mes-día T hora, hora de CDMX).
   - Para apagar un bloque: activo: false.
   - "destacado" se oculta solo cuando pasa su fecha de cierre.
   - "evento" se oculta solo 3 horas después de su fecha.
   - Si una fecha queda vacía (""), el bloque se muestra sin cuenta regresiva ni fecha.
+  - El último video de YouTube NO se edita aquí: se actualiza solo (ver video.json).
 */
 window.MALACA = {
   nombre: "Malaca Music Lab",
   descripcion: "Ableton Live, Push y Move <em>en español</em>, con Ernesto Malaca desde Ciudad de México.",
-  logo: "", // ruta de la imagen del logo, p. ej. "img/logo.gif"; vacío = sin logo
+  logo: "img/logo.webp", // vacío = sin logo
 
   redes: [
     { red: "instagram", url: "https://instagram.com/malacamusiclab" },
@@ -20,26 +21,39 @@ window.MALACA = {
     { red: "whatsapp", url: "https://wa.me/525518047945" }
   ],
 
-  // El bloque con fuego, hasta arriba
+  // El bloque blanco, hasta arriba
   destacado: {
     activo: true,
     etiqueta: "Ya empezó",
-    titulo: "Ableton Live 12 <em>al mejor precio</em>",
-    texto: "Cupón educativo para Latinoamérica. Llenas el formulario y tu código llega al momento por WhatsApp y correo.",
+    titulo: "Ableton Live 12 Suite <em>a precio de locura</em>",
+    texto: "Llenas el formulario y tu código llega al momento por WhatsApp y correo.",
+    moneda: "USD",
+    precios: [
+      { nombre: "Comprar", detalle: "Licencia completa", antes: 749, ahora: 168 },
+      { nombre: "Actualizar", detalle: "Desde una Suite anterior", antes: 229, ahora: 90 }
+    ],
+    regalo: "Compra Live 12 ahora y la actualización a <em>Live 13</em> va de regalo cuando salga, a inicios de 2027.",
     boton: "Quiero mi cupón",
     url: "https://docs.google.com/forms/d/1UMLR9AyD76Nm3nsVW6y_z4GAAVff1n2fXrC73DL-hKo",
-    cierre: "", // fecha de cierre de la campaña
-    nota: "Programa Ableton para la educación"
+    cierre: "2026-12-04T23:59:00-06:00",
+    nota: "Descuento exclusivo para Latinoamérica. Aplican restricciones."
   },
 
-  // Evento de la semana
+  // Evento de la semana (apagado por ahora)
   evento: {
-    activo: true,
+    activo: false,
     etiqueta: "Zoom en vivo",
-    titulo: "Masterclass de Live 13 con Santo & Mala",
+    titulo: "",
     boton: "Regístrate al zoom",
-    url: "https://forms.gle/wf5fP7fBDHy6PjFG9",
-    fecha: "" // fecha y hora del evento
+    url: "",
+    fecha: ""
+  },
+
+  // Último video del canal: se llena solo desde video.json
+  video: {
+    activo: true,
+    etiqueta: "Último video",
+    canal: "https://youtube.com/@malacamusiclab"
   },
 
   // Curso destacado
@@ -61,8 +75,11 @@ window.MALACA = {
   ],
 
   pie: {
-    imagen: "", // p. ej. "img/gatos.png" (la caricatura); vacío = sin imagen
-    textoImagen: "Bruna, Ceniza y Pandorito",
+    gatos: [
+      { nombre: "Bruna", imagen: "img/bruna.webp" },
+      { nombre: "Ceniza", imagen: "img/ceniza.webp" },
+      { nombre: "Pandorito", imagen: "img/pandorito.webp" }
+    ],
     enlace: { texto: "malacamusiclab.com", url: "https://www.malacamusiclab.com" }
   }
 };
