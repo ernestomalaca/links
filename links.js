@@ -13,6 +13,7 @@ window.MALACA = {
   nombre: "Malaca Music Lab",
   descripcion: "Ableton Live, Push y Move <em>en español</em>, con Ernesto Malaca desde Ciudad de México.",
   logo: "img/logo.webp", // vacío = sin logo
+  sello: { imagen: "img/ableton-certified-trainer.svg", texto: "Ableton Certified Trainer" },
 
   redes: [
     { red: "instagram", url: "https://instagram.com/malacamusiclab" },
@@ -24,6 +25,7 @@ window.MALACA = {
   // El bloque blanco, hasta arriba
   destacado: {
     activo: true,
+    marca: { imagen: "img/ableton-para-la-educacion.png", texto: "Ableton para la educación" },
     etiqueta: "Ya empezó",
     titulo: "Ableton Live 12 Suite <em>a precio de locura</em>",
     texto: "Llenas el formulario y tu código llega al momento por WhatsApp y correo.",
