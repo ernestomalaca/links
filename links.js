@@ -63,7 +63,7 @@ window.MALACA = {
     titulo: "Domina Ableton Move",
     boton: "Ver el curso",
     url: "https://www.malacamusiclab.com/dominamove",
-    imagen: "" // p. ej. "img/move.jpg"; vacío = tarjeta sin portada
+    imagen: "img/move.jpg" // vacío = tarjeta sin portada
   },
 
   // Tarjetas chicas (iconos disponibles: foco, regalo, bolsa, gato, nota, video)
