@@ -76,7 +76,7 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
 
 .video{background:var(--tarjeta);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s}
 .video:hover{transform:translateY(-2px)}
-.video .mini{position:relative;aspect-ratio:16/9;background:#1A1C18}
+.video .mini{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:#1A1C18}
 .video .mini img{width:100%;height:100%;object-fit:cover;display:block}
 .video .play{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:var(--acento);color:var(--tinta);display:flex;align-items:center;justify-content:center}
 .video .txt{padding:14px 20px 18px;display:flex;flex-direction:column;gap:6px}
@@ -297,7 +297,7 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
       if (!j || !/^[\w-]{6,20}$/.test(j.id || '')) return;
       caja.className = 'video';
       caja.href = 'https://www.youtube.com/watch?v=' + j.id;
-      caja.innerHTML = '<span class="mini"><img src="https://i.ytimg.com/vi/' + j.id + '/hqdefault.jpg" alt="" loading="lazy"><span class="play">' + svg(ICONOS.play, 26) + '</span></span>' +
+      caja.innerHTML = '<span class="mini"><img src="https://i.ytimg.com/vi/' + j.id + '/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')"><span class="play">' + svg(ICONOS.play, 26) + '</span></span>' +
         '<span class="txt"><span class="etiqueta">' + esc(v.etiqueta) + '</span><h2>' + esc(j.titulo) + '</h2></span>';
     }).catch(function () {});
   }
