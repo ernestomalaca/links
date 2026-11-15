@@ -1,1 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malaca Music Lab · Links</title>
+<meta name="description" content="Cursos, tips y herramientas de Ableton Live, Push y Move en español.">
+<meta name="theme-color" content="#262924">
+<meta property="og:title" content="Malaca Music Lab">
+<meta property="og:description" content="Cursos, tips y herramientas de Ableton Live, Push y Move en español.">
+<meta property="og:url" content="https://links.malacamusiclab.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap">
+<style>
+:root{--fondo:#262924;--tarjeta:#33372F;--borde:#4A4E44;--texto:#FFFFFF;--suave:#D4D6CE;--acento:#FF6B1A;--tinta:#1A1C18}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--texto);outline-offset:3px}
+em{font-style:italic}
+[hidden]{display:none!important}
+main{max-width:460px;margin:0 auto;padding:36px 20px 28px;display:flex;flex-direction:column;gap:16px;min-height:100vh}
 
+.cabeza{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding-bottom:8px}
+.logo{width:88px;height:88px;border-radius:50%;object-fit:cover}
+h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+.desc{margin:0;font-size:14px;line-height:1.5;color:var(--suave);max-width:300px}
+.desc em{font-weight:700;color:var(--acento)}
+.redes{display:flex;gap:10px;margin-top:4px}
+.redes a{width:44px;height:44px;border-radius:50%;background:var(--tarjeta);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.redes a:hover{background:var(--acento);color:var(--tinta)}
+
+.fuego{background:var(--acento);color:var(--tinta);border-radius:24px;padding:22px 20px 20px;display:flex;flex-direction:column;gap:14px;animation:brillo 2.6s ease-in-out infinite}
+.fuego-arriba{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.vivo{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.punto{position:relative;width:10px;height:10px}
+.punto::before,.punto::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--tinta)}
+.punto::before{animation:pulso 1.6s ease-out infinite}
+.fuego h2{margin:0;font-size:31px;font-weight:800;line-height:1.05;letter-spacing:-.8px}
+.fuego p{margin:0;font-size:14px;line-height:1.5;font-weight:500}
+.cuenta{display:flex;gap:8px}
+.cuenta div{flex:1;background:var(--tinta);color:var(--texto);border-radius:14px;padding:10px 0 8px;text-align:center}
+.cuenta b{display:block;font-size:26px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.cuenta span{display:block;font-size:11px;font-weight:500;color:var(--suave);margin-top:4px}
+.boton-fuego{display:flex;align-items:center;justify-content:center;gap:8px;height:54px;border-radius:27px;background:var(--tinta);color:var(--texto);font-size:16px;font-weight:700;transition:transform .15s}
+.boton-fuego:hover{transform:scale(1.02)}
+.fuego .nota{font-size:12px;text-align:center}
+
+.evento{border:1.5px solid var(--borde);border-radius:24px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.etiqueta{font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--acento)}
+.evento h2{margin:0;font-size:20px;font-weight:700;line-height:1.2}
+.boton-claro{display:flex;align-items:center;justify-content:center;height:46px;border-radius:23px;background:var(--texto);color:var(--tinta);font-size:14px;font-weight:700;margin-top:2px;transition:background .15s}
+.boton-claro:hover{background:var(--acento)}
+
+.curso{background:var(--tarjeta);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s}
+.curso:hover{transform:translateY(-2px)}
+.curso img{width:100%;height:170px;object-fit:cover;display:block}
+.curso-texto{padding:16px 20px 18px;display:flex;flex-direction:column;gap:8px}
+.chip{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tinta);background:var(--acento);border-radius:10px;padding:4px 10px}
+.curso h2{margin:0;font-size:22px;font-weight:800;line-height:1.15;letter-spacing:-.3px}
+.ir{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--acento);min-height:28px}
+
+.rejilla{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tarjeta{background:var(--tarjeta);border-radius:20px;padding:16px;min-height:124px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;transition:transform .15s,background .15s}
+.tarjeta:hover{transform:translateY(-2px);background:#3B4036}
+.tarjeta svg{color:var(--acento)}
+.tarjeta b{display:block;font-size:15px;font-weight:700;line-height:1.2}
+.tarjeta span{display:block;font-size:12px;color:var(--suave);line-height:1.35;margin-top:2px}
+
+.pie{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.pie img{max-width:220px;width:100%;height:auto}
+.pie a{display:flex;align-items:center;min-height:44px;font-size:13px;font-weight:600;color:var(--suave)}
+.pie a:hover{color:var(--texto)}
+
+@keyframes pulso{0%{transform:scale(1);opacity:1}70%,100%{transform:scale(2.4);opacity:0}}
+@keyframes brillo{0%,100%{box-shadow:0 0 0 0 rgba(255,107,26,.55)}50%{box-shadow:0 0 44px 4px rgba(255,107,26,.55)}}
+@media (prefers-reduced-motion:reduce){.fuego,.punto::before{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<main id="app">
+<noscript><p>Visita <a href="https://www.malacamusiclab.com">malacamusiclab.com</a></p></noscript>
+</main>
+<script src="links.js"></script>
+<script>
+(function () {
+  var D = window.MALACA;
+  var app = document.getElementById('app');
+  if (!D) { app.innerHTML = '<p>Visita <a href="https://www.malacamusiclab.com">malacamusiclab.com</a></p>'; return; }
+
+  function svg(inner, size) {
+    size = size || 24;
+    return '<svg aria-hidden="true" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + inner + '</svg>';
+  }
+  var ICONOS = {
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>',
+    youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/>',
+    tiktok: '<path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 3c0 3 2 5 5 5"/>',
+    whatsapp: '<path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9c0 3 3 6 6 6"/>',
+    foco: '<path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+    regalo: '<rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18"/><path d="M12 9v12"/><path d="M12 9c-2 0-4-1-4-3s3-2 4 3c1-5 4-5 4-3s-2 3-4 3z"/>',
+    bolsa: '<path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 0 1 6 0"/>',
+    gato: '<path d="M5 4l3 4h8l3-4v9a7 7 0 0 1-14 0z"/><path d="M9.5 12.5v.5"/><path d="M14.5 12.5v.5"/><path d="M11 16l1 1 1-1"/>',
+    nota: '<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>',
+    video: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>',
+    flecha: '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
+    flama: '<path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/>'
+  };
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  // Permite solo <em> en los textos del archivo de links
+  function rico(s) { return esc(s).replace(/&lt;(\/?)em&gt;/g, '<$1em>'); }
+  function fecha(s) { if (!s) return null; var d = new Date(s); return isNaN(d) ? null : d; }
+
+  var ahora = Date.now();
+  var h = '';
+
+  // Cabecera
+  h += '<header class="cabeza">';
+  if (D.logo) h += '<img class="logo" src="' + esc(D.logo) + '" alt="">';
+  h += '<h1>' + esc(D.nombre) + '</h1>';
+  if (D.descripcion) h += '<p class="desc">' + rico(D.descripcion) + '</p>';
+  if (D.redes && D.redes.length) {
+    h += '<nav class="redes" aria-label="Redes">';
+    D.redes.forEach(function (r) {
+      h += '<a href="' + esc(r.url) + '" aria-label="' + esc(r.red) + '" rel="noopener">' + svg(ICONOS[r.red] || ICONOS.flecha, 20) + '</a>';
+    });
+    h += '</nav>';
+  }
+  h += '</header>';
+
+  // Destacado
+  var f = D.destacado, cierre = f && fecha(f.cierre);
+  if (f && f.activo && !(cierre && cierre.getTime() <= ahora)) {
+    h += '<section class="fuego" aria-label="Destacado">';
+    h += '<div class="fuego-arriba"><div class="vivo"><span class="punto"></span>' + esc(f.etiqueta) + '</div>' + svg(ICONOS.flama, 26) + '</div>';
+    h += '<h2>' + rico(f.titulo) + '</h2>';
+    if (f.texto) h += '<p>' + rico(f.texto) + '</p>';
+    if (cierre) h += '<div class="cuenta" id="cuenta" aria-label="Tiempo restante"><div><b id="cd">--</b><span>días</span></div><div><b id="ch">--</b><span>horas</span></div><div><b id="cm">--</b><span>min</span></div><div><b id="cs">--</b><span>seg</span></div></div>';
+    h += '<a class="boton-fuego" href="' + esc(f.url) + '" rel="noopener">' + esc(f.boton) + svg(ICONOS.flecha, 18) + '</a>';
+    var nota = f.nota || '';
+    if (cierre) nota += (nota ? ' · ' : '') + 'cierra el ' + cierre.toLocaleDateString('es-MX', { day: 'numeric', month: 'long' });
+    if (nota) h += '<p class="nota">' + esc(nota) + '</p>';
+    h += '</section>';
+  }
+
+  // Evento
+  var e = D.evento, cuando = e && fecha(e.fecha);
+  if (e && e.activo && !(cuando && cuando.getTime() + 3 * 3600e3 <= ahora)) {
+    var et = e.etiqueta || '';
+    if (cuando) et += (et ? ' · ' : '') + cuando.toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' }) + ', ' + cuando.toLocaleTimeString('es-MX', { hour: 'numeric', minute: '2-digit' });
+    h += '<section class="evento" aria-label="Evento">';
+    if (et) h += '<div class="etiqueta">' + esc(et) + '</div>';
+    h += '<h2>' + esc(e.titulo) + '</h2>';
+    h += '<a class="boton-claro" href="' + esc(e.url) + '" rel="noopener">' + esc(e.boton) + '</a>';
+    h += '</section>';
+  }
+
+  // Curso
+  var c = D.curso;
+  if (c && c.activo) {
+    h += '<a class="curso" href="' + esc(c.url) + '" rel="noopener">';
+    if (c.imagen) h += '<img src="' + esc(c.imagen) + '" alt="">';
+    h += '<div class="curso-texto">';
+    if (c.etiqueta) h += '<div class="chip">' + esc(c.etiqueta) + '</div>';
+    h += '<h2>' + esc(c.titulo) + '</h2>';
+    h += '<div class="ir">' + esc(c.boton) + svg(ICONOS.flecha, 16) + '</div>';
+    h += '</div></a>';
+  }
+
+  // Tarjetas
+  if (D.tarjetas && D.tarjetas.length) {
+    h += '<section class="rejilla" aria-label="Más de Malaca">';
+    D.tarjetas.forEach(function (t) {
+      h += '<a class="tarjeta" href="' + esc(t.url) + '" rel="noopener">' + svg(ICONOS[t.icono] || ICONOS.nota) + '<div><b>' + esc(t.titulo) + '</b><span>' + esc(t.texto) + '</span></div></a>';
+    });
+    h += '</section>';
+  }
+
+  // Pie
+  var p = D.pie || {};
+  h += '<footer class="pie">';
+  if (p.imagen) h += '<img src="' + esc(p.imagen) + '" alt="' + esc(p.textoImagen) + '">';
+  if (p.enlace) h += '<a href="' + esc(p.enlace.url) + '">' + esc(p.enlace.texto) + '</a>';
+  h += '</footer>';
+
+  app.innerHTML = h;
+
+  // Cuenta regresiva
+  if (cierre && document.getElementById('cuenta')) {
+    var dos = function (n) { return (n < 10 ? '0' : '') + n; };
+    var tic = function () {
+      var s = Math.floor((cierre.getTime() - Date.now()) / 1000);
+      if (s <= 0) { location.reload(); return; }
+      document.getElementById('cd').textContent = Math.floor(s / 86400);
+      document.getElementById('ch').textContent = dos(Math.floor(s % 86400 / 3600));
+      document.getElementById('cm').textContent = dos(Math.floor(s % 3600 / 60));
+      document.getElementById('cs').textContent = dos(s % 60);
+    };
+    tic();
+    setInterval(tic, 1000);
+  }
+})();
+</script>
+</body>
+</html>
