@@ -25,6 +25,7 @@ window.MALACA = {
   // El bloque blanco, hasta arriba
   destacado: {
     activo: true,
+    enfoque: true, // al entrar, la página se desliza sola hasta este bloque
     marca: { imagen: "img/ableton-para-la-educacion.png", texto: "Ableton para la educación" },
     etiqueta: "Ya empezó",
     titulo: "Ableton Live 12 Suite <em>a precio de locura</em>",

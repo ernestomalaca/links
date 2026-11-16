@@ -313,6 +313,25 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
     setInterval(tic, 1000);
   }
 
+  // Al entrar, la página se desliza sola hasta la campaña (una vez por visita;
+  // se cancela si la persona ya tocó o movió la página). Se apaga con enfoque: false.
+  var promo = document.querySelector('.fuego');
+  var yaVisto = false;
+  try { yaVisto = sessionStorage.getItem('mml-enfoque') === '1'; } catch (err) {}
+  if (promo && f.enfoque !== false && !yaVisto && !location.hash) {
+    var cancelado = false;
+    var cancelar = function () { cancelado = true; };
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) {
+      window.addEventListener(ev, cancelar, { passive: true, once: true });
+    });
+    setTimeout(function () {
+      if (cancelado || window.pageYOffset > 8) return;
+      var y = promo.getBoundingClientRect().top + window.pageYOffset - 14;
+      try { sessionStorage.setItem('mml-enfoque', '1'); } catch (err) {}
+      window.scrollTo({ top: y, behavior: calmado ? 'auto' : 'smooth' });
+    }, 1500);
+  }
+
   // Último video: video.json lo actualiza solo un script en GitHub
   var caja = document.getElementById('video');
   if (caja && window.fetch) {
