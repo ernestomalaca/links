@@ -41,7 +41,7 @@ window.MALACA = {
     boton: "Quiero mi cupón",
     url: "https://docs.google.com/forms/d/1UMLR9AyD76Nm3nsVW6y_z4GAAVff1n2fXrC73DL-hKo",
     cierre: "2026-12-04T23:59:00-06:00",
-    nota: "Descuento exclusivo para Latinoamérica. Aplican restricciones."
+    nota: "Para estudiantes de Latinoamérica que puedan comprobarlo. Aplican restricciones."
   },
 
   // Evento de la semana (apagado por ahora)
