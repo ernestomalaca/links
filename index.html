@@ -57,6 +57,14 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
 .punto::before{animation:pulso 1.6s ease-out infinite}
 .flama{color:var(--acento);transform-origin:50% 90%;animation:flama 1.1s ease-in-out infinite alternate}
 .fuego h2{margin:0;font-size:30px;font-weight:800;line-height:1.05;letter-spacing:-.8px}
+.cambio{position:relative;display:inline-block}
+.cambio .de{display:inline-block;transform-origin:100% 0;transition:transform .5s cubic-bezier(.3,1.4,.5,1),color .4s}
+.cambio .de::after{content:"";position:absolute;left:-6%;top:50%;height:.11em;width:0;background:var(--acento);border-radius:2px;transform:rotate(-8deg);transition:width .45s ease-out}
+.cambio .a{position:absolute;left:0;top:0;color:#D94E00;opacity:0;transform:scale(.4) translateY(40%);transition:transform .5s cubic-bezier(.3,1.7,.5,1),opacity .25s}
+.cambio.tacha .de::after{width:112%}
+.cambio.listo .de{transform:translate(38%,-62%) scale(.42);color:var(--gris)}
+.cambio.listo .a{opacity:1;transform:none}
+.fuego h2{padding-top:6px}
 .fuego p{margin:0;font-size:14px;line-height:1.5;font-weight:500}
 .precios{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .precio{position:relative;background:#EFEEE9;color:var(--tinta);border-radius:18px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:2px;overflow:hidden}
@@ -195,7 +203,9 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
     h += '<section class="fuego" aria-label="Destacado">';
     if (f.marca && f.marca.imagen) h += '<div class="fuego-marca"><img src="' + esc(f.marca.imagen) + '" alt="' + esc(f.marca.texto) + '"></div>';
     h += '<div class="fuego-arriba"><div class="vivo"><span class="punto"></span>' + esc(f.etiqueta) + '</div>' + svg(ICONOS.flama, 28, 'flama') + '</div>';
-    h += '<h2>' + rico(f.titulo) + '</h2>';
+    var tit = rico(f.titulo);
+    if (f.cambio) tit = tit.replace('{cambio}', '<span class="cambio" role="text" aria-label="' + esc(f.cambio.a) + ' (antes ' + esc(f.cambio.de) + ')"><span class="de" aria-hidden="true">' + esc(f.cambio.de) + '</span><span class="a" aria-hidden="true">' + esc(f.cambio.a) + '</span></span>');
+    h += '<h2>' + tit + '</h2>';
     if (f.precios && f.precios.length) {
       h += '<div class="precios">';
       f.precios.forEach(function (p) {
@@ -297,6 +307,22 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
       });
     }, 350);
   });
+
+  // El número del título se tacha y cambia (p. ej. 12 -> 13) cuando la tarjeta está a la vista
+  var cambio = document.querySelector('.cambio');
+  if (cambio) {
+    var animarCambio = function () {
+      if (calmado) { cambio.classList.add('tacha', 'listo'); return; }
+      setTimeout(function () { cambio.classList.add('tacha'); }, 2700);
+      setTimeout(function () { cambio.classList.add('listo'); }, 3500);
+    };
+    if (window.IntersectionObserver) {
+      var ojo = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting) { ojo.disconnect(); animarCambio(); }
+      }, { threshold: 1 });
+      ojo.observe(cambio);
+    } else { animarCambio(); }
+  }
 
   // Cuenta regresiva
   if (cierre && document.getElementById('cuenta')) {

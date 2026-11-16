@@ -28,7 +28,9 @@ window.MALACA = {
     enfoque: true, // al entrar, la página se desliza sola hasta este bloque
     marca: { imagen: "img/ableton-para-la-educacion.png", texto: "Ableton para la educación" },
     etiqueta: "Ya empezó",
-    titulo: "Ableton Live 12 Suite <em>a precio de locura</em>",
+    // {cambio} es el número que se tacha y se transforma (de -> a)
+    titulo: "Ableton Live {cambio} Suite <em>a precio de locura</em>",
+    cambio: { de: "12", a: "13" },
     texto: "Llenas el formulario y tu código llega al momento por WhatsApp y correo.",
     moneda: "USD",
     precios: [
