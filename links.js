@@ -31,12 +31,14 @@ window.MALACA = {
     // {cambio} es el número que se tacha y se transforma (de -> a)
     titulo: "Ableton Live {cambio} Suite <em>a precio de locura</em>",
     cambio: { de: "12", a: "13" },
-    texto: "Llenas el formulario y tu código llega al momento por WhatsApp y correo.",
+    texto: "Para <em>comprar</em>: llenas el formulario y tu código llega al momento por WhatsApp y correo.",
     moneda: "USD",
     precios: [
       { nombre: "Comprar", detalle: "Licencia completa", antes: 749, ahora: 168 },
-      { nombre: "Actualizar", detalle: "Desde una Suite anterior", antes: 229, ahora: 90 }
+      { nombre: "Actualizar", detalle: "Desde una Suite anterior", antes: 229, ahora: 90, estado: "Lista de espera", pide: "Apartar mi lugar" }
     ],
+    // Aviso con reloj, arriba del regalo (vacío = no se muestra)
+    aviso: "<em>Actualizar tiene lista de espera.</em> Los cupones de actualización llegan a inicios de diciembre: llena el formulario para apartar tu lugar y te avisamos por correo en cuanto estén.",
     regalo: "Compra Live 12 ahora y la actualización a <em>Live 13</em> va de regalo cuando salga, a inicios de 2027.",
     boton: "Quiero mi cupón",
     url: "https://docs.google.com/forms/d/1UMLR9AyD76Nm3nsVW6y_z4GAAVff1n2fXrC73DL-hKo",
